@@ -1,0 +1,170 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "arr",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "unit",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "prod",
+						"type": "string"
+					},
+					{
+						"internalType": "int256",
+						"name": "n",
+						"type": "int256"
+					},
+					{
+						"internalType": "string",
+						"name": "date",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "status",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMyStructs",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "unit",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "prod",
+								"type": "string"
+							},
+							{
+								"internalType": "int256",
+								"name": "n",
+								"type": "int256"
+							},
+							{
+								"internalType": "string",
+								"name": "date",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "status",
+								"type": "string"
+							}
+						],
+						"internalType": "struct demoArray.l1[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "len",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "u",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "p",
+						"type": "string"
+					},
+					{
+						"internalType": "int256",
+						"name": "n1",
+						"type": "int256"
+					},
+					{
+						"internalType": "string",
+						"name": "x",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "y",
+						"type": "string"
+					}
+				],
+				"name": "push_element",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"assignments/vender1.sol": "demoArray"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"assignments/vender1.sol": {
+			"keccak256": "0xd97ae93c44156a7a0930decd8a97fc887f372e90daa63b8ef0224ddd0009d4a0",
+			"urls": [
+				"bzz-raw://d009f052db3d06ea530586b5cda5d74db8545707f906e616c8339b7cdeb9b3bd",
+				"dweb:/ipfs/QmbWSrFj2EMZLhLP9c6bXedjZndgB8fYjLne3ScZSzYpN4"
+			]
+		}
+	},
+	"version": 1
+}

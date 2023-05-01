@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap.bundle.min.js "></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+</head>
+<body onload="get()">
+    <script>
+        let account;
+        // const connectMetamask = async () => {
+			
+			const ABI=[
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "u",
+				"type": "string"
+			},
+			{
+				"internalType": "string[]",
+				"name": "p",
+				"type": "string[]"
+			},
+			{
+				"internalType": "int256[]",
+				"name": "n1",
+				"type": "int256[]"
+			},
+			{
+				"internalType": "string",
+				"name": "x",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "y",
+				"type": "string"
+			}
+		],
+		"name": "push_element",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "user_id",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "prod",
+						"type": "string[]"
+					},
+					{
+						"internalType": "int256[]",
+						"name": "quantity",
+						"type": "int256[]"
+					},
+					{
+						"internalType": "string",
+						"name": "date",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "ven_id",
+						"type": "string"
+					},
+					{
+						"internalType": "int256[]",
+						"name": "price",
+						"type": "int256[]"
+					},
+					{
+						"internalType": "string",
+						"name": "ED",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "id",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "status",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "trans",
+						"type": "string"
+					}
+				],
+				"internalType": "struct vender1.l2",
+				"name": "x",
+				"type": "tuple"
+			}
+		],
+		"name": "push_element1",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "x",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "id",
+				"type": "string"
+			}
+		],
+		"name": "update",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "arr",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "user_id",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "date",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "status",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "arr2",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "user_id",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "date",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "ven_id",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "ED",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "id",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "status",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "trans",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getMyStructs",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "user_id",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "prod",
+						"type": "string[]"
+					},
+					{
+						"internalType": "int256[]",
+						"name": "quantity",
+						"type": "int256[]"
+					},
+					{
+						"internalType": "string",
+						"name": "date",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "status",
+						"type": "string"
+					}
+				],
+				"internalType": "struct vender1.l1[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getquotes",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "user_id",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "prod",
+						"type": "string[]"
+					},
+					{
+						"internalType": "int256[]",
+						"name": "quantity",
+						"type": "int256[]"
+					},
+					{
+						"internalType": "string",
+						"name": "date",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "ven_id",
+						"type": "string"
+					},
+					{
+						"internalType": "int256[]",
+						"name": "price",
+						"type": "int256[]"
+					},
+					{
+						"internalType": "string",
+						"name": "ED",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "id",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "status",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "trans",
+						"type": "string"
+					}
+				],
+				"internalType": "struct vender1.l2[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "len",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+	const Address = "0x14c6d521c1effe1BbF54dAcAaDB4cdB81Ad37fFf";
+            
+
+        // }
+        // const connectContract = async () => {
+            
+        // }
+        const get = async () => {
+			x=localStorage["name"];
+			document.getElementById("user_name").innerHTML=`${x}`
+            if(window.ethereum !== "undefined"){
+                const accounts = await ethereum.request({method: "eth_requestAccounts"});
+                account = accounts[0];
+            }
+            
+			// <td>${data[i][3]}</td>
+            window.web3 = await new Web3(window.ethereum);
+            window.contract = await new window.web3.eth.Contract(ABI, Address);
+            const data = await window.contract.methods.getMyStructs().call();
+			const d1 = await window.contract.methods.getquotes().call();
+			var tabledata = "";
+			let sum=0,m=1,f=0,k=0,j=0;
+			// console.log(d1);
+            var a = [];
+            for (let i = 0; i < d1.length; i++) {
+				sum=0;
+				for(let j=0;j<d1[i][1].length;j++){
+					sum=sum+parseInt(d1[i][2][j])*parseInt(d1[i][5][j]);
+					console.log(sum,d1.length,d1[i][1][j],d1[i][5][j])
+					
+				// td=td+` <tr>         
+                // <td id="ven${i}">${data[i][4]}</td>
+                // <td id="price${i}">${data[i][1]}</td>
+				// <td id="price${i}">${data[i][2]}</td>
+				// <td id="price${i}">${data[i][5]}</td>
+                // </tr> `;
+				}
+				a.push(sum);
+			}
+            for (let i = 0; i < d1.length; i++) {
+				if(i==0){
+                    document.getElementById("accepted").innerHTML = "All Accepted Requests";
+                }
+				console.log(d1[i][0],x);
+				if(d1[i][0]===x){
+				// f=0;
+				// for(k=0;k<d1.length;k++){
+				// 	// console.log(d1[k][4],document.getElementById('m1').value , d1[k][7],data[i][4])
+				// 	if(d1[k][4]===document.getElementById('m1').value && d1[k][7]===data[i][4]){
+                //         console.log(d1[k][4]===document.getElementById('m1').value && d1[k][7]==data[i][4],i,d1[k]);
+				// 		f=1;
+                //         break;
+				// 	}
+				// }
+                
+                console.log(d1[i][8])
+				if(d1[i][8]==="accepted"){
+                    console.log(d1[i],"hi");
+					tabledata = tabledata + ` <tr>         
+						    <td><h5>REQUEST(${d1[i][7]})<h5></td>
+                            <td id="ven${i}">${d1[i][4]}</td>
+                            <td id="price${i}">${a[i]}</td>
+                            <td id="sta${i}">${d1[i][6]}</td>
+                            <td><button type="button" class="btn btn-primary" onclick="view(${i})">View More</td>
+                    </tr> `;	
+					// }			
+                }
+			}
+            }
+            // <td id="sta${i}">${d1[i][8]}</td>
+			// document.getElementById("user_name").innerHTML = `<id="name">${data[0][0]}</>`
+            document.getElementById("tablebody").innerHTML = tabledata
+        }
+        const view=async(m)=>{
+			if(window.ethereum !== "undefined"){
+                const accounts = await ethereum.request({method: "eth_requestAccounts"});
+                account = accounts[0];
+            }
+            window.web3 = await new Web3(window.ethereum);
+            window.contract = await new window.web3.eth.Contract(ABI, Address);
+			const d1 = await window.contract.methods.getMyStructs().call();
+			const data = await window.contract.methods.getquotes().call();
+			var tabled = "";
+			let sum=0;
+			let j=0;
+			var a = [];
+            for (let i = 0; i < data.length; i++) {
+				if(i==m){
+					sum=0;
+					for(let j=0;j<data[i][1].length;j++){
+						sum=sum+parseInt(data[i][2][j])*parseInt(data[i][5][j]);
+					tabled=tabled+` <tr>         
+					<td id="ven${i}">${data[i][4]}</td>
+					<td id="price${i}">${data[i][1][j]}</td>
+					<td id="price${i}">${data[i][2][j]}</td>
+					<td id="price${i}">${data[i][5][j]}</td>
+					</tr> `;
+					}
+					a.push(sum);
+				}
+			}
+			console.log(tabled)
+			document.getElementById("tb").innerHTML = tabled;
+        }
+        
+    </script>
+    <div class="container">
+        <h1 style="text-align: center;">BUYER</h1>
+        <nav class="navbar navbar-expand-lg bg-body-primary navbar-light bg-warning">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0  align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="cosDB.html"><button class="btn btn-info">Home</button></a>
+                </li>
+                </ul>
+                
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="navbar-nav ms-auto mb-2 mb-lg-0">
+						<a id="user_name"></a>
+					</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><button class="btn btn-info">Logout</button></a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+		<h1 style="text-align: center;" id="user_name"> </h1>
+		<h3 style="text-align: center;" id="accepted"></h3>
+        <table class="table">
+                <thead>
+                    <tr>
+						<th>Req Id</th>
+                        <th>Vendor Name</th>
+                        <th>Total</th>
+						<th>Expected Date</th>
+                    </tr>
+                </thead>
+                <tbody id="tablebody">
+                </tbody>
+            </table>
+            <table>
+			<h3 id="date"></h3>
+			<h5 id="Total"></h5>
+            <div  class="table">
+				<thead>
+					<tr>
+						<th>Vender_ID</th>
+						<th>Product Name</th>
+						<th>Quantity</th>
+						<th>Quote Price</th>
+					</tr>
+				</thead>
+				<tbody id="tb">
+				</tbody>
+			</table>
+			</div>
+    </div>
+</body>
+</html>
